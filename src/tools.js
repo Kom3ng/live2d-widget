@@ -10,7 +10,7 @@ import showMessage from "./message.js";
 
 function showHitokoto() {
     // 增加 hitokoto.cn 的 API
-    fetch("https://v1.hitokoto.cn")
+    fetch("https://v1.hitokoto.cn?c=a&c=b&c=c&c=d&encode=json")
         .then(response => response.json())
         .then(result => {
             const text = `这句一言来自 <span>「${result.from}」</span>，是 <span>${result.creator}</span> 在 hitokoto.cn 投稿的。`;
@@ -50,7 +50,7 @@ const tools = {
     "photo": {
         icon: fa_camera_retro,
         callback: () => {
-            showMessage("照好了嘛，是不是很可爱呢？", 6000, 9);
+            showMessage("照好了嘛~？", 6000, 9);
             Live2D.captureName = "photo.png";
             Live2D.captureFrame = true;
         }
